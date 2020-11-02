@@ -7,14 +7,14 @@ import io.restassured.http.ContentType;
 
 public class ApiTests {
 	
-	private static  String ID_DO_FILME = "tt1285016";
-	private static  String API_KEY = "52ec71bf";
-	
+	private static String ID_DO_FILME = "tt1285016";
+	private static String API_KEY = "52ec71bf";
+	private static String endpoint = "http://www.omdbapi.com/";
+
 	
 	@Test
 	public void validarTituloAnoIdioma() {
 		
-		String endpoint = "http://www.omdbapi.com/";
 			
 		given()
 		.relaxedHTTPSValidation()
@@ -30,6 +30,22 @@ public class ApiTests {
 		.body("Language", equalTo("English, French"));
 	}
 	
+	@Test
+	public void validarFilmeInexistenteIdInvalida() {
+					
+		given()
+		.relaxedHTTPSValidation()
+		.param("t", "abcdd")
+		.param("apikey", API_KEY) 
+		.when()
+		.get(endpoint)
+		.then()
+		.statusCode(200) 
+		.contentType(ContentType.JSON) 
+		.body("Response", equalTo("False")) 
+		.body("Error", equalTo("Movie not found!"));
+		
+	}	
 
 	
 }
