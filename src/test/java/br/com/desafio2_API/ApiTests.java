@@ -12,7 +12,7 @@ public class ApiTests {
 	
 	
 	@Test
-	public void validarNomeAnoIdioma() {
+	public void validarTituloAnoIdioma() {
 		
 		String endpoint = "http://www.omdbapi.com/";
 			
