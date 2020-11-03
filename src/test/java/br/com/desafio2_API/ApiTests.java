@@ -40,7 +40,7 @@ public class ApiTests {
 					
 		response = given()
 		.relaxedHTTPSValidation()
-		.param("t", "abcdd")
+		.param("t", "123453")
 		.param("apikey", API_KEY) 
 		.when()
 		.get(endpoint)
@@ -60,7 +60,7 @@ public class ApiTests {
 		response = given()
 		.relaxedHTTPSValidation()
 		.param("t", ID_DO_FILME)
-		.param("apikey", "abcdd") 
+		.param("apikey", "123453") 
 		.when()
 		.get(endpoint)
 		.then()
