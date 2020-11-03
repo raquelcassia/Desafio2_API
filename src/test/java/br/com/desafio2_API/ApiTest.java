@@ -9,7 +9,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 
-public class ApiTests {
+public class ApiTest {
 	
 	private static String ID_DO_FILME = "tt1285016";
 	private static String API_KEY = "52ec71bf";
