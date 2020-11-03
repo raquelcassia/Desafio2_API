@@ -12,8 +12,9 @@ para as duas funcionalidades abaixo:
 EndPoint:    http://www.omdbapi.com/?i=[ID_DO_FILME]&apikey=[API_KEY]
 Parâmetros:  ID_DO_FILME: tt1285016 API_KEY= 52ec71bf
 
-<b>ID_DO_FILME e API_KEY deverão ser passados por variáveis GLOBAIS</b>
+ID_DO_FILME e API_KEY deverão ser passados por variáveis GLOBAIS
 ```
+
 
 
 
