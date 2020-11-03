@@ -6,6 +6,7 @@ import static org.hamcrest.Matchers.equalTo;
 import org.junit.Test;
 
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 
 
 public class ApiTests {
@@ -13,31 +14,31 @@ public class ApiTests {
 	private static String ID_DO_FILME = "tt1285016";
 	private static String API_KEY = "52ec71bf";
 	private static String endpoint = "http://www.omdbapi.com/";
-	
+	private static Response response;
 
 	
 	@Test
 	public void validarTituloAnoIdioma()  {
 			
-		 given()
-		.relaxedHTTPSValidation()
-		.param("i", ID_DO_FILME) 
-		.param("apikey", API_KEY) 
-		.when()
-		.get(endpoint)
-		.then()
-		.statusCode(200) 
-		.contentType(ContentType.JSON) 
-		.body("Title", equalTo("The Social Network"))
-		.body("Year", equalTo("2010")) 
-		.body("Language", equalTo("English, French"));
-		
+		response = given()
+				.relaxedHTTPSValidation()
+				.param("i", ID_DO_FILME) 
+				.param("apikey", API_KEY) 
+				.when()
+				.get(endpoint)
+				.then()
+				.statusCode(200) 
+				.contentType(ContentType.JSON) 
+				.body("Title", equalTo("The Social Network"))
+				.body("Year", equalTo("2010")) 
+				.body("Language", equalTo("English, French"))
+				.log().all().extract().response();
 	}
 	
 	@Test
 	public void validarFilmeInexistenteIdInvalida() {
 					
-		given()
+		response = given()
 		.relaxedHTTPSValidation()
 		.param("t", "abcdd")
 		.param("apikey", API_KEY) 
@@ -47,14 +48,16 @@ public class ApiTests {
 		.statusCode(200) 
 		.contentType(ContentType.JSON) 
 		.body("Response", equalTo("False")) 
-		.body("Error", equalTo("Movie not found!"));
+		.body("Error", equalTo("Movie not found!"))
+		.log().all().extract().response();
+
 		
 	}	
 
 	@Test
 	public void validarFilmeInexistenteKeyInvalida() {
 					
-		given()
+		response = given()
 		.relaxedHTTPSValidation()
 		.param("t", ID_DO_FILME)
 		.param("apikey", "abcdd") 
@@ -63,7 +66,9 @@ public class ApiTests {
 		.then()
 		.contentType(ContentType.JSON) 
 		.body("Response", equalTo("False")) 
-		.body("Error", equalTo("Invalid API key!"));
+		.body("Error", equalTo("Invalid API key!"))
+		.log().all().extract().response();
+
 		
 		}
 	}
