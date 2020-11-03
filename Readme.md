@@ -46,7 +46,11 @@ ID_DO_FILME e API_KEY deverão ser passados por variáveis GLOBAIS
 
 - [JDK install +8](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - [Eclipse IDE install](http://www.eclipse.org/downloads/)
-- [Cucumber e Selenium](https://automacaoforadacaixa.wordpress.com/2017/05/01/1-configuracao-ambiente-selenium-e-cucumber/)
 - [Maven](https://dicasdejava.com.br/como-instalar-o-maven-no-windows/)
 
+## Como rodar
+
+```
+- mvn clean test
+```
 
