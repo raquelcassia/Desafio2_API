@@ -35,7 +35,7 @@ ID_DO_FILME e API_KEY deverão ser passados por variáveis GLOBAIS
 ## Casos de Teste
 
 ```
- 1. Validação de do Titulo, Ano e Idioma do Filme retornado.
+ 1. Validação do Titulo, Ano e Idioma do Filme retornado.
  2. Validação de Filme Inexistente através de Key inválida.
  3. Validação de Filme Inexistente através de Id inválido.
 ```
@@ -46,7 +46,13 @@ ID_DO_FILME e API_KEY deverão ser passados por variáveis GLOBAIS
 
 - [JDK install +8](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - [Eclipse IDE install](http://www.eclipse.org/downloads/)
-- [Cucumber e Selenium](https://automacaoforadacaixa.wordpress.com/2017/05/01/1-configuracao-ambiente-selenium-e-cucumber/)
 - [Maven](https://dicasdejava.com.br/como-instalar-o-maven-no-windows/)
 
+--
+
+## Como rodar
+
+```
+- mvn clean test
+```
 
