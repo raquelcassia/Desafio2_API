@@ -1,5 +1,9 @@
 # Desafio 2 - OMDB API
-> Projeto de automação para API OMDB em Java utilizando Maven Framework e REST Assured.			
+> Projeto de automação para API OMDB em Java utilizando Maven Framework e REST Assured.		
+
+
+---	
+
 
 Criar um projeto de automação para API utilizando framework de sua preferência os cenários
 para as duas funcionalidades abaixo:
@@ -9,7 +13,7 @@ EndPoint:    http://www.omdbapi.com/?i=[ID_DO_FILME]&apikey=[API_KEY]
 Parâmetros:  ID_DO_FILME: tt1285016 API_KEY= 52ec71bf
 ```
 
-<h6> ID_DO_FILME e API_KEY deverão ser passados por variáveis GLOBAIS </h6>
+	<h6> ID_DO_FILME e API_KEY deverão ser passados por variáveis GLOBAIS </h6>
 
 1 - No endpoint validar o response para:
 
