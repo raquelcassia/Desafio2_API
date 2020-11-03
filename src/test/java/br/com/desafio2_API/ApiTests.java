@@ -2,21 +2,24 @@ package br.com.desafio2_API;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
+
 import org.junit.Test;
+
 import io.restassured.http.ContentType;
+
 
 public class ApiTests {
 	
 	private static String ID_DO_FILME = "tt1285016";
 	private static String API_KEY = "52ec71bf";
 	private static String endpoint = "http://www.omdbapi.com/";
+	
 
 	
 	@Test
-	public void validarTituloAnoIdioma() {
-		
+	public void validarTituloAnoIdioma()  {
 			
-		given()
+		 given()
 		.relaxedHTTPSValidation()
 		.param("i", ID_DO_FILME) 
 		.param("apikey", API_KEY) 
@@ -28,6 +31,7 @@ public class ApiTests {
 		.body("Title", equalTo("The Social Network"))
 		.body("Year", equalTo("2010")) 
 		.body("Language", equalTo("English, French"));
+		
 	}
 	
 	@Test
@@ -47,5 +51,19 @@ public class ApiTests {
 		
 	}	
 
-	
-}
+	@Test
+	public void validarFilmeInexistenteKeyInvalida() {
+					
+		given()
+		.relaxedHTTPSValidation()
+		.param("t", ID_DO_FILME)
+		.param("apikey", "abcdd") 
+		.when()
+		.get(endpoint)
+		.then()
+		.contentType(ContentType.JSON) 
+		.body("Response", equalTo("False")) 
+		.body("Error", equalTo("Invalid API key!"));
+		
+		}
+	}
