@@ -48,7 +48,7 @@ ID_DO_FILME e API_KEY deverão ser passados por variáveis GLOBAIS
 - [Eclipse IDE install](http://www.eclipse.org/downloads/)
 - [Maven](https://dicasdejava.com.br/como-instalar-o-maven-no-windows/)
 
---
+---
 
 ## Como rodar
 
