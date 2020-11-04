@@ -53,6 +53,9 @@ ID_DO_FILME e API_KEY deverão ser passados por variáveis GLOBAIS
 ## Como rodar
 
 ```
-- mvn clean test
+• mvn clean test
+
+![CONTINUOUS INTEGRATION](https://github.com/raquelcassia/Desafio2_API/workflows/CONTINUOUS%20INTEGRATION/badge.svg)
+
 ```
 
