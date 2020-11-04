@@ -27,7 +27,7 @@ public class ApiTest {
 				.when()
 				.get(endpoint)
 				.then()
-				.statusCode(475) 
+				.statusCode(200) 
 				.contentType(ContentType.JSON) 
 				.body("Title", equalTo("The Social Network"))
 				.body("Year", equalTo("2010")) 
